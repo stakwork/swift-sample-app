@@ -16,7 +16,7 @@ class API {
         return Static.instance
     }
     
-    public static let host = "https://people.sphinx.chat"
+    public static let host = "localhost:3000"
     
     typealias GetPeopleListCallback = ((Bool, JSON?) -> ())
     typealias CreatePeopleProfile = (Bool) -> ()
@@ -82,14 +82,13 @@ class API {
     }
     
     public func updatePeopleProfileWith(
-        token: String,
         alias: String,
         imageUrl: String?,
         publicKey: String,
         routeHint: String,
         callback: @escaping CreatePeopleProfile
     ) {
-        let url = "\(API.host)/person?token=\(token)"
+        let url = "\(API.host)/person"
         
         let params: [String: AnyObject] = [
             "owner_pubkey": publicKey as AnyObject,

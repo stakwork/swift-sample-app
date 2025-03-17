@@ -68,7 +68,6 @@ class ViewController: UIViewController {
     
     func updateProfile(person: Person) {
         API.sharedInstance.updatePeopleProfileWith(
-            token: "testToken",
             alias: person.alias ?? "",
             imageUrl: person.imageUrl ?? "",
             publicKey: person.publicKey ?? "",
